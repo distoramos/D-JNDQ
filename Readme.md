@@ -8,6 +8,8 @@ Model architecture
 
 Pre-trained model parameters
 
+Pre-processing input images with HDR-VDP-3
+
 Evaluation scripts
 
 Calculated D-JNDQ scores for TID-2103 images
