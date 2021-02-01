@@ -11,7 +11,7 @@ d_jndq.load_state_dict(torch.load('BestModelParams.pt'))
 d_jndq.eval()
 
 tid2013 = pd.read_csv('D:/tid2013/mos_with_names.txt', delimiter=' ', header=None)
-tid2013['deep_sim'] = np.zeros(3000)
+tid2013['d-jndq'] = np.zeros(3000)
 tid2013 = tid2013.rename(columns={tid2013.columns[0]:'mos', tid2013.columns[1]:'dist_name'})
 
 with torch.no_grad():
@@ -21,8 +21,8 @@ with torch.no_grad():
         dist_name = tid2013['dist_name'][i]
 
         # Load pre-processed Achromatic responses.
-        ref = loadmat('D:/deep_similarity/tid_2013_eval/P_maps/' + ref_name + '.mat')['ref_P']
-        dist = loadmat('D:/deep_similarity/tid_2013_eval/P_maps/' + dist_name + '.mat')['test_P']
+        ref = loadmat('./P_maps/' + ref_name + '.mat')['ref_P']
+        dist = loadmat('./P_maps/' + dist_name + '.mat')['test_P']
         ref, dist = np.expand_dims(ref, axis=0), np.expand_dims(dist, axis=0)
         ref, dist = np.expand_dims(ref, axis=0), np.expand_dims(dist, axis=0)
 
@@ -43,5 +43,5 @@ with torch.no_grad():
 
 # Save acquired scores to a csv file for ease of read.
 # Also to a txt file to use with provided TID-2013 evaluation executable files.
-tid2013.to_csv('D:/deep_similarity/tid_2013_eval/deepsim_withnames_23_01_nohrvdp.csv')
-np.savetxt('D:/deep_similarity/tid_2013_eval/d-jndq.txt', tid2013['deep_sim'].values, fmt='%1.6f')
+tid2013.to_csv('./D-JNDQ_withfnames.csv')
+np.savetxt('./D-JNDQ.txt', tid2013['d-jndq'].values, fmt='%1.6f')
