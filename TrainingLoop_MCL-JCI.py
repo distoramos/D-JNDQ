@@ -1,9 +1,6 @@
-import argparse
 import time
-import numpy as np
 import torch.nn.functional as F
 import torch
-import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
 from torch.utils.data import DataLoader
@@ -47,17 +44,20 @@ def trainNet(net, batch_size, n_epochs, learning_rate):
     print("batch_size=", batch_size)
     print("epochs=", n_epochs)
 
-    # Get training data
+    # Get pair information with ground truth dissimilarity metrics from the provided JND file.
     jnd_pairs = np.genfromtxt(open('jnd_pairs_npy.csv'), delimiter=',', dtype=str)
 
     # Split dataset into 3 parts as training, validation and test.(total number of pairs=4950)
     train_split = 4000
     val_split = 4500
 
+    # Set root directory for training data
+    training_datadir = './P_map_npyfiles_hdrvdp3_detection'
+
     # call Dataloader function with defined splits.
-    data_train = DataLoad.mcl_jci(jnd_pairs[:train_split], root_dir='P_map_npyfiles_hdrvdp3_detection')
-    data_val = DataLoad.mcl_jci(jnd_pairs[train_split:val_split], root_dir='P_map_npyfiles_hdrvdp3_detection')
-    data_test = DataLoad.mcl_jci(jnd_pairs[val_split:], root_dir='P_map_npyfiles_hdrvdp3_detection')
+    data_train = DataLoad.mcl_jci(jnd_pairs[:train_split], root_dir=training_datadir)
+    data_val = DataLoad.mcl_jci(jnd_pairs[train_split:val_split], root_dir=training_datadir)
+    data_test = DataLoad.mcl_jci(jnd_pairs[val_split:], root_dir=training_datadir)
 
     data_train_loader = DataLoader(data_train, batch_size=batch_size, shuffle=True)
     data_val_loader = DataLoader(data_val, batch_size=batch_size, shuffle=True)
