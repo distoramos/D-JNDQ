@@ -2,20 +2,20 @@
 Public repository for D-JNDQ: Learning Image Quality from Just Noticeable Differences
 
 
-##Training scripts
+## Training scripts
 
 * *TrainingLoop_MCL-JCI.py* contains the necessary functions to retrain the defined model on MCL-JCI Dataset
 * *DataLoader_MCLJCI.py* is required to load the data during training
 * *SiameseNet.py* is required to define the model architecture.
 
-##Pre-trained model parameters
+## Pre-trained model parameters
 
 * Pretrained model parameters with the optimal hyper parameters can be found in *BestModelParams.pt* file.
 * Usage example can be found in [TID-2013](http://www.ponomarenko.info/tid2013.htm) [[1]](#1) evaluation script. (*Eval_TID2013.py*)
 * Note that, input image pairs first need to be pre-processed with [HDR-VDP-3](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/).
 * Example matlab code for pre-processing stage is given in the following section
 
-##Pre-processing input images with HDR-VDP-3 [[2]](#2)
+## Pre-processing input images with HDR-VDP-3 [[2]](#2)
 
 
 By default, viewing density and display device parameters may not be given with the dataset. 
@@ -68,22 +68,22 @@ ref_AchromaticResponse = sss.P_ref;
 dist_AchromaticResponse = sss.P_test;
 ```
 
-##Evaluation scripts
+## Evaluation scripts
 
 * *Eval_TID2013.py* scripts contains the evaluation loop over TID-2013 dataset 
 * It is currently implemented to work on GPU, however it is straightforward to load the same model for CPU calculation.
 
-##Calculated D-JNDQ scores for TID-2103 images
+## Calculated D-JNDQ scores for TID-2103 images
 * Predicted similarity scores with D-JNDQ on TID-2013 dataset can be found on *D-JNDQ_withfnames.csv* file.
 * Additionally, predicted scores are also saved as a txt file without filenames in order to be directly input into 
   executable evaluation functions provided by TID-2013 dataset. They can be found in *D-JNDQ.txt* file.
   
 
-##Link to pre-processed MCL-JCI dataset images
+## Link to pre-processed MCL-JCI dataset images
 
 * A link will be added soon
 
-##Link to pre-processed TID-2013 dataset images
+## Link to pre-processed TID-2013 dataset images
 
 * A link will be added soon
 
