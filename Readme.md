@@ -4,25 +4,25 @@ Public repository for D-JNDQ: Learning Image Quality from Just Noticeable Differ
 
 ## Training scripts
 
-* *TrainingLoop_MCL-JCI.py* contains the necessary functions to retrain the defined model on MCL-JCI Dataset
+* *TrainingLoop_MCL-JCI.py* contains the necessary functions to retrain the defined model on MCL-JCI Dataset [[3]](#3)
 * *DataLoader_MCLJCI.py* is required to load the data during training
 * *SiameseNet.py* is required to define the model architecture.
 
 ## Pre-trained model parameters
 
 * Pretrained model parameters with the optimal hyper parameters can be found in *BestModelParams.pt* file.
-* Usage example can be found in [TID-2013](http://www.ponomarenko.info/tid2013.htm) [[1]](#1) evaluation script. (*Eval_TID2013.py*)
+* Usage example can be found in [TID-2013](http://www.ponomarenko.info/tid2013.htm) [[2]](#2) evaluation script. (*Eval_TID2013.py*)
 * Note that, input image pairs first need to be pre-processed with [HDR-VDP-3](https://sourceforge.net/projects/hdrvdp/files/hdrvdp/).
 * Example matlab code for pre-processing stage is given in the following section
 
-## Pre-processing input images with HDR-VDP-3 [[2]](#2)
+## Pre-processing input images with HDR-VDP-3 [[1]](#1)
 
 
 By default, viewing density and display device parameters may not be given with the dataset. 
 Although, they are not difficult to find out from the dataset papers, default values below can be adapted
 in the case where they are not known.
 
-note: A function is provided to calculate ppd value in HDR-VDP-3. 
+note: A function is provided to calculate ppd value in HDR-VDP-3 [[1]](#1). 
 However here is another example [link](http://phrogz.net/tmp/ScreenDensityCalculator.html#find:density,pxW:1920,pxH:720,size:12.3,sizeUnit:in,axis:diag,distance:31,distUnit:in) to calculate viewing density
 
 
@@ -70,24 +70,24 @@ dist_AchromaticResponse = sss.P_test;
 
 ## Evaluation scripts
 
-* *Eval_TID2013.py* scripts contains the evaluation loop over TID-2013 dataset 
+* *Eval_TID2013.py* scripts contains the evaluation loop over TID-2013 dataset [[2]](#2). 
 * It is currently implemented to work on GPU, however it is straightforward to load the same model for CPU calculation.
 
 ## Calculated D-JNDQ scores for TID-2103 images
-* Predicted similarity scores with D-JNDQ on TID-2013 dataset can be found on *D-JNDQ_withfnames.csv* file.
+* Predicted similarity scores with D-JNDQ on TID-2013 [[2]](#2) dataset can be found on *D-JNDQ_withfnames.csv* file.
 * Additionally, predicted scores are also saved as a txt file without filenames in order to be directly input into 
-  executable evaluation functions provided by TID-2013 dataset. They can be found in *D-JNDQ.txt* file.
+  executable evaluation functions provided by TID-2013 dataset [[2]](#2). They can be found in *D-JNDQ.txt* file.
   
 
 ## Link to pre-processed MCL-JCI dataset images
 
 * Pre-processed images from  in .npy format can be downloaded via following this [link](https://drive.google.com/file/d/1e0rIZ9JwsVkvHvWN1O6vLXI21Jg0rjYb/view?usp=sharing)
-* We claim no ownership for the dataset, please cite the corresponding papers in the [MCL-JCI dataset page](http://mcl.usc.edu/mcl-jci-dataset) if you are going to use them for your research.
+* We claim no ownership for the dataset, please cite the corresponding papers in the [MCL-JCI dataset page](http://mcl.usc.edu/mcl-jci-dataset) if you are going to use them for your research [[3]](#3).
 
 ## Link to pre-processed TID-2013 dataset images
 
 * Pre-processed images in .mat format can be downloaded via following this [link](https://drive.google.com/file/d/1bPvn5kP95q6YseSifzZkDO4kBibve96k/view?usp=sharing)
-* We claim no ownership for the dataset, please cite the corresponding papers in the [TID-2013 dataset page](http://www.ponomarenko.info/tid2013.htm) if you are going to use them for your research.
+* We claim no ownership for the dataset, please cite the corresponding papers in the [TID-2013 dataset page](http://www.ponomarenko.info/tid2013.htm) if you are going to use them for your research [[2]](#2).
 
 ## References
 <a id="1">[1]</a> 
@@ -95,7 +95,10 @@ Rafal Mantiuk, Kil Joong Kim, Allan G. Rempel, and Wolfgang  Heidrich,
 “Hdr-vdp-2: A calibrated visual metric for visibility and quality predictions in all luminance conditions”
 ACM Trans. Graph., vol. 30, no. 4,July 2011.
 
-<a id="1">[2]</a> 
+<a id="2">[2]</a> 
 Nikolay Ponomarenko, Lina Jin, Oleg Ieremeiev, Vladimir Lukin, Karen Egiazarian, Jaakko Astola, Benoit Vozel, Kacem Chehdi, Marco Carli, Federica Battisti, and C.-C. Jay Kuo,  
 “Image database tid2013: Peculiarities, Results and Perspectives”
 Signal Process-ing: Image Communication, vol. 30, pp. 57 – 77, 2015
+
+<a id="3">[3]</a> 
+Lina Jin, Joe Yuchieh Lin, Sudeng Hu, Haiqiang Wang, Ping Wang, Ioannis Katsavounidis, Anne Aaron and C.-C. Jay Kuo. “Statistical Study on Perceived JPEG Image Quality via MCL-JCI Dataset Construction and Analysis.” Electronic Imaging (2016), the Society for Imaging Science and Technology (IS&T).
