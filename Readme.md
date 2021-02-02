@@ -81,12 +81,12 @@ dist_AchromaticResponse = sss.P_test;
 
 ## Link to pre-processed MCL-JCI dataset images
 
-* Pre-processed images from  in .npy format can be downloaded via following this [link] (https://drive.google.com/file/d/1e0rIZ9JwsVkvHvWN1O6vLXI21Jg0rjYb/view?usp=sharing)
+* Pre-processed images from  in .npy format can be downloaded via following this [link](https://drive.google.com/file/d/1e0rIZ9JwsVkvHvWN1O6vLXI21Jg0rjYb/view?usp=sharing)
 * We claim no ownership for the dataset, please cite the corresponding papers in the [MCL-JCI dataset page](http://mcl.usc.edu/mcl-jci-dataset) if you are going to use them for your research.
 
 ## Link to pre-processed TID-2013 dataset images
 
-* Pre-processed images in .mat format can be downloaded via following this [link] (https://drive.google.com/file/d/1bPvn5kP95q6YseSifzZkDO4kBibve96k/view?usp=sharing)
+* Pre-processed images in .mat format can be downloaded via following this [link](https://drive.google.com/file/d/1bPvn5kP95q6YseSifzZkDO4kBibve96k/view?usp=sharing)
 * We claim no ownership for the dataset, please cite the corresponding papers in the [TID-2013 dataset page](http://www.ponomarenko.info/tid2013.htm) if you are going to use them for your research.
 
 ## References
