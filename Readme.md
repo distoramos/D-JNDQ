@@ -1,6 +1,8 @@
 # D-JNDQ
 Public repository for D-JNDQ: Learning Image Quality from Just Noticeable Differences
 
+Link to pre-print: https://hal.archives-ouvertes.fr/hal-03127756v1
+
 
 ## Training scripts
 
